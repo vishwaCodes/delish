@@ -29,8 +29,8 @@ const Home = () => {
   const categoryData = [
     {
       id: 1,
-      name: "Rice",
-      icon: <MaterialIcons name="rice-bowl" size={24} color="black" />,
+      name: "Bowls",
+      icon: <MaterialCommunityIcons name="bowl-mix" size={24} color="black" />,
     },
     {
       id: 2,
@@ -336,6 +336,16 @@ const Home = () => {
   //   return "";
   // }
 
+  function onSelectCategory(category) {
+    // Filter restaurant
+    let restaurantList = restaurantData.filter((a) =>
+      a.categories.includes(category.id)
+    );
+
+    setRestaurants(restaurantList);
+    setSelectedCategory(category);
+  }
+
   function renderHeader() {
     return (
       <View style={{ flexDirection: "row", height: 50 }}>
@@ -398,6 +408,7 @@ const Home = () => {
             marginRight: SIZES.padding,
             ...styles.shadow,
           }}
+          onPress={() => onSelectCategory(item)}
         >
           <View
             style={{
@@ -412,7 +423,14 @@ const Home = () => {
             {item.icon}
           </View>
 
-          <Text>{item.name}</Text>
+          <Text
+            style={{
+              marginTop: SIZES.padding,
+              color: COLORS.white,
+            }}
+          >
+            {item.name}
+          </Text>
         </TouchableOpacity>
       );
     };
