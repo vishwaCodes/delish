@@ -17,14 +17,29 @@ const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      tabBarOptions={{
+        showLabel: false,
+        style: {
+          borderTopWidth: 0,
+        },
+      }}
+    >
       <Tab.Screen
         name="Home"
         component={Home}
         options={{
           tabBarIcon: ({ focused }) => {
             return (
-              <Ionicons name="ios-fast-food-outline" size={24} color="black" />
+              <View>
+                <TouchableOpacity>
+                  <Ionicons
+                    name="ios-fast-food-outline"
+                    size={24}
+                    color="black"
+                  />
+                </TouchableOpacity>
+              </View>
             );
           },
         }}
@@ -34,7 +49,13 @@ const Tabs = () => {
         component={Home}
         options={{
           tabBarIcon: ({ focused }) => {
-            return <Ionicons name="ios-search" size={24} color="black" />;
+            return (
+              <View>
+                <TouchableOpacity>
+                  <Ionicons name="ios-search" size={24} color="black" />
+                </TouchableOpacity>
+              </View>
+            );
           },
         }}
       />
@@ -43,7 +64,13 @@ const Tabs = () => {
         component={Home}
         options={{
           tabBarIcon: ({ focused }) => {
-            return <Ionicons name="heart-outline" size={24} color="black" />;
+            return (
+              <View>
+                <TouchableOpacity>
+                  <Ionicons name="heart-outline" size={24} color="black" />
+                </TouchableOpacity>
+              </View>
+            );
           },
         }}
       />
@@ -52,7 +79,13 @@ const Tabs = () => {
         component={Home}
         options={{
           tabBarIcon: ({ focused }) => {
-            return <AntDesign name="user" size={24} color="black" />;
+            return (
+              <View>
+                <TouchableOpacity>
+                  <AntDesign name="user" size={24} color="black" />
+                </TouchableOpacity>
+              </View>
+            );
           },
         }}
       />
