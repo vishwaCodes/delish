@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-import { FontAwesome5 } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
@@ -347,6 +347,14 @@ const Home = () => {
     setSelectedCategory(category);
   }
 
+  function getCategoryNameById(id) {
+    let category = categories.filter((a) => a.id == id);
+
+    if (category.length > 0) return category[0].name;
+
+    return "";
+  }
+
   function renderHeader() {
     return (
       <View style={{ flexDirection: "row", height: 50 }}>
@@ -443,8 +451,8 @@ const Home = () => {
 
     return (
       <View style={{ padding: SIZES.padding * 2 }}>
-        <Text style={{ fontSize: "30" }}>Main</Text>
-        <Text style={{ fontSize: "30" }}>Categories</Text>
+        <Text style={{ fontSize: "30" }}>Top</Text>
+        <Text style={{ fontSize: "30" }}>Cuisines</Text>
 
         <FlatList
           data={categories}
@@ -499,7 +507,67 @@ const Home = () => {
           </View>
         </View>
 
+        {/* Restaurant Info */}
         <Text style={{ ...FONTS.body2 }}>{item.name}</Text>
+
+        <View
+          style={{
+            marginTop: SIZES.padding,
+            flexDirection: "row",
+          }}
+        >
+          {/* Rating */}
+          <FontAwesome
+            name="star"
+            size={24}
+            color="black"
+            style={{ marginRight: 10 }}
+          />
+          <Text style={{ ...FONTS.body3 }}>{item.rating}</Text>
+
+          {/* Resturant Genres */}
+          <View
+            style={{
+              flexDirection: "row",
+              marginLeft: 10,
+            }}
+          >
+            {item.categories.map((categoryId) => {
+              return (
+                <View
+                  style={{
+                    flexDirection: "row",
+                  }}
+                  key={categoryId}
+                >
+                  <Text style={{ ...FONTS.body3 }}>
+                    {getCategoryNameById(categoryId)}
+                  </Text>
+                  <Text style={{ ...FONTS.h3, color: COLORS.darkgray }}>
+                    {" "}
+                    .{" "}
+                  </Text>
+                </View>
+              );
+            })}
+
+            {/* Price */}
+            {[1, 2, 3].map((priceRating) => (
+              <Text
+                key={priceRating}
+                style={{
+                  ...FONTS.body3,
+                  color:
+                    priceRating <= item.priceRating
+                      ? COLORS.black
+                      : COLORS.darkgray,
+                }}
+              >
+                $
+              </Text>
+            ))}
+          </View>
+        </View>
       </TouchableOpacity>
     );
 
