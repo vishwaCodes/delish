@@ -317,25 +317,6 @@ const Home = () => {
     initialCurrentLocation
   );
 
-  // function onSelectCategory(category) {
-  //   //filter restaurant
-  //   let restaurantList = restaurantData.filter((a) =>
-  //     a.categories.includes(category.id)
-  //   );
-
-  //   setRestaurants(restaurantList);
-
-  //   setSelectedCategory(category);
-  // }
-
-  // function getCategoryNameById(id) {
-  //   let category = categories.filter((a) => a.id == id);
-
-  //   if (category.length > 0) return category[0].name;
-
-  //   return "";
-  // }
-
   function onSelectCategory(category) {
     // Filter restaurant
     let restaurantList = restaurantData.filter((a) =>
