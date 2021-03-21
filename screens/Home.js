@@ -19,7 +19,7 @@ const Home = () => {
   // Dummy Datas
 
   const initialCurrentLocation = {
-    streetName: "Kuching",
+    streetName: "Park Slope",
     gps: {
       latitude: 1.5496614931250685,
       longitude: 110.36381866919922,
@@ -458,10 +458,46 @@ const Home = () => {
     );
   }
 
+  function renderRestaurantList() {
+    const renderItem = ({ item }) => (
+      <TouchableOpacity
+        style={{
+          marginBottom: SIZES.padding * 2,
+        }}
+        // onPress
+      >
+        <View>
+          <Image
+            source={item.photo}
+            resizeMode="cover"
+            style={{
+              width: "100%",
+              height: 200,
+              borderRadius: SIZES.radius,
+            }}
+          />
+        </View>
+      </TouchableOpacity>
+    );
+
+    return (
+      <FlatList
+        data={restaurants}
+        keyExtractor={(item) => `${item.id}`}
+        renderItem={renderItem}
+        contentContainerStyle={{
+          paddingHorizontal: SIZES.padding * 2,
+          paddingBottom: 30,
+        }}
+      />
+    );
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       {renderHeader()}
       {renderMainCategories()}
+      {renderRestaurantList()}
     </SafeAreaView>
   );
 };
