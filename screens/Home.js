@@ -9,6 +9,8 @@ import {
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
+import { FontAwesome5 } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS, images, SIZES, FONTS } from "../constants";
@@ -28,42 +30,32 @@ const Home = () => {
     {
       id: 1,
       name: "Rice",
+      icon: <MaterialIcons name="rice-bowl" size={24} color="black" />,
     },
     {
       id: 2,
       name: "Noodles",
+      icon: <MaterialCommunityIcons name="noodles" size={24} color="black" />,
     },
     {
       id: 3,
-      name: "Hot Dogs",
+      name: "Tacos",
+      icon: <MaterialCommunityIcons name="taco" size={24} color="black" />,
     },
     {
       id: 4,
-      name: "Salads",
+      name: "Burgers",
+      icon: <MaterialCommunityIcons name="hamburger" size={24} color="black" />,
     },
     {
       id: 5,
-      name: "Burgers",
+      name: "Pizza",
+      icon: <Ionicons name="pizza" size={24} color="black" />,
     },
     {
       id: 6,
-      name: "Pizza",
-    },
-    {
-      id: 7,
-      name: "Snacks",
-    },
-    {
-      id: 8,
-      name: "Sushi",
-    },
-    {
-      id: 9,
-      name: "Desserts",
-    },
-    {
-      id: 10,
       name: "Drinks",
+      icon: <MaterialIcons name="local-drink" size={24} color="black" />,
     },
   ];
 
@@ -325,24 +317,24 @@ const Home = () => {
     initialCurrentLocation
   );
 
-  function onSelectCategory(category) {
-    //filter restaurant
-    let restaurantList = restaurantData.filter((a) =>
-      a.categories.includes(category.id)
-    );
+  // function onSelectCategory(category) {
+  //   //filter restaurant
+  //   let restaurantList = restaurantData.filter((a) =>
+  //     a.categories.includes(category.id)
+  //   );
 
-    setRestaurants(restaurantList);
+  //   setRestaurants(restaurantList);
 
-    setSelectedCategory(category);
-  }
+  //   setSelectedCategory(category);
+  // }
 
-  function getCategoryNameById(id) {
-    let category = categories.filter((a) => a.id == id);
+  // function getCategoryNameById(id) {
+  //   let category = categories.filter((a) => a.id == id);
 
-    if (category.length > 0) return category[0].name;
+  //   if (category.length > 0) return category[0].name;
 
-    return "";
-  }
+  //   return "";
+  // }
 
   function renderHeader() {
     return (
@@ -406,7 +398,22 @@ const Home = () => {
             marginRight: SIZES.padding,
             ...styles.shadow,
           }}
-        ></TouchableOpacity>
+        >
+          <View
+            style={{
+              width: 50,
+              height: 50,
+              borderRadius: 25,
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: COLORS.white,
+            }}
+          >
+            {item.icon}
+          </View>
+
+          <Text>{item.name}</Text>
+        </TouchableOpacity>
       );
     };
 
