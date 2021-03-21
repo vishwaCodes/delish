@@ -476,6 +476,23 @@ const Home = () => {
               borderRadius: SIZES.radius,
             }}
           />
+
+          <View
+            style={{
+              position: "absolute",
+              bottom: 0,
+              height: 50,
+              width: SIZES.width * 0.3,
+              backgroundColor: COLORS.white,
+              borderTopRightRadius: SIZES.radius,
+              borderBottomLeftRadius: SIZES.radius,
+              alignItems: "center",
+              justifyContent: "center",
+              ...styles.shadow,
+            }}
+          >
+            <Text style={{ ...FONTS.h4 }}>{item.duration}</Text>
+          </View>
         </View>
       </TouchableOpacity>
     );
