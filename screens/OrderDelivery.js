@@ -12,8 +12,8 @@ export default class OrderDelivery extends React.Component {
         provider={PROVIDER_GOOGLE}
         showsUserLocation
         initialRegion={{
-          latitude: 37.78825,
-          longitude: -122.4324,
+          latitude: 40.73061,
+          longitude: -73.935242,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}
