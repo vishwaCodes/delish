@@ -13,6 +13,8 @@ import { icons, COLORS, SIZES, FONTS } from "../constants";
 
 import { Ionicons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 
 const Restaurant = ({ route, navigation }) => {
   const scrollX = new Animated.Value(0);
@@ -280,7 +282,32 @@ const Restaurant = ({ route, navigation }) => {
                 flexDirection: "row",
               }}
             >
-              <Ionicons name="ios-location-outline" size={24} color="black" />
+              <TouchableOpacity
+                style={{
+                  width: 20,
+                  tintColor: COLORS.darkgray,
+                }}
+              >
+                <Ionicons name="ios-location-outline" size={24} color="black" />
+              </TouchableOpacity>
+
+              <Text style={{ marginLeft: SIZES.padding, top: 5 }}>
+                Location
+              </Text>
+            </View>
+
+            <View style={{ flexDirection: "row" }}>
+              <TouchableOpacity
+                style={{
+                  width: 20,
+                  height: 20,
+                  tintColor: COLORS.darkgray,
+                }}
+              >
+                <FontAwesome name="cc-mastercard" size={24} color="black" />
+              </TouchableOpacity>
+
+              <Text style={{ marginLeft: SIZES.padding }}>4444</Text>
             </View>
           </View>
         </View>
