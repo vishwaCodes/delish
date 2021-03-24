@@ -30,10 +30,10 @@ const Restaurant = ({ route, navigation }) => {
   });
 
   function editOrder(action, menuId, price) {
-    if (action == "+") {
-      let orderList = orderItems.slice();
-      let item = orderList.filter((a) => a.menuId == menuId);
+    let orderList = orderItems.slice();
+    let item = orderList.filter((a) => a.menuId == menuId);
 
+    if (action == "+") {
       if (item.length > 0) {
         let newQty = item[0].qty + 1;
         item[0].qty = newQty;
@@ -49,6 +49,14 @@ const Restaurant = ({ route, navigation }) => {
       }
       setOrderItems(orderList);
     } else {
+      if (item.length > 0) {
+        if (item[0]?.qty > 0) {
+          let newQty = item[0].qty - 1;
+          item[0].qty = newQty;
+          item[0].total = newQty * price;
+        }
+      }
+      setOrderItems(orderList);
     }
   }
 
@@ -156,6 +164,7 @@ const Restaurant = ({ route, navigation }) => {
                     borderTopLeftRadius: 25,
                     borderBottomLeftRadius: 25,
                   }}
+                  onPress={() => editOrder("-", item.menuId, item.price)}
                 >
                   <Text>-</Text>
                 </TouchableOpacity>
