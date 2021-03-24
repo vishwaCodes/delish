@@ -12,6 +12,7 @@ import {
 import { icons, COLORS, SIZES, FONTS } from "../constants";
 
 import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 const Restaurant = ({ route, navigation }) => {
   const [restaurant, setRestaurant] = React.useState(null);
@@ -28,7 +29,7 @@ const Restaurant = ({ route, navigation }) => {
       <View style={{ flexDirection: "row" }}>
         <TouchableOpacity
           style={{
-            widht: 50,
+            width: 50,
             paddingLeft: SIZES.padding * 2,
             justifyContent: "center",
           }}
@@ -55,14 +56,41 @@ const Restaurant = ({ route, navigation }) => {
               backgroundColor: COLORS.lightGray3,
             }}
           >
-            <Text>{restaurant?.name}</Text>
+            <Text style={{ ...FONTS.h3 }}>{restaurant?.name}</Text>
           </View>
         </View>
+        <TouchableOpacity
+          style={{
+            width: 50,
+            paddingRight: SIZES.padding * 2,
+            justifyContent: "center",
+          }}
+        >
+          <FontAwesome5 name="list" size={24} color="black" />
+        </TouchableOpacity>
       </View>
     );
   }
 
-  return <SafeAreaView style={styles.container}>{renderHeader()}</SafeAreaView>;
+  function renderFoodInfo() {
+    return (
+      <Animated.ScrollView
+        horizontal
+        pagingEnabled
+        scrollEventThrottle={16}
+        snapToAlignment="center"
+        showsHorizontalScrollIndicator={false}
+        // onScroll
+      ></Animated.ScrollView>
+    );
+  }
+
+  return (
+    <SafeAreaView style={styles.container}>
+      {renderHeader()}
+      {renderFoodInfo()}
+    </SafeAreaView>
+  );
 };
 
 const styles = StyleSheet.create({
