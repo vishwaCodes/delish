@@ -129,6 +129,19 @@ const Restaurant = ({ route, navigation }) => {
                 >
                   <Text>5</Text>
                 </View>
+
+                <TouchableOpacity
+                  style={{
+                    width: 50,
+                    backgroundColor: COLORS.white,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderTopRightRadius: 25,
+                    borderBottomRightRadius: 25,
+                  }}
+                >
+                  <Text>+</Text>
+                </TouchableOpacity>
               </View>
             </View>
           </View>
