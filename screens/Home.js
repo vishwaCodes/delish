@@ -392,7 +392,9 @@ const Home = ({ navigation }) => {
             padding: SIZES.padding,
             paddingBottom: SIZES.padding * 2,
             backgroundColor:
-              selectedCategory?.id == item.id ? COLORS.primary : COLORS.white,
+              selectedCategory?.id == item.id
+                ? COLORS.primary
+                : COLORS.pastelBlue,
             borderRadius: SIZES.radius,
             alignItems: "center",
             justifyContent: "center",
@@ -419,7 +421,7 @@ const Home = ({ navigation }) => {
             style={{
               marginTop: SIZES.padding,
               color:
-                selectedCategory?.id == item.id ? COLORS.white : COLORS.black,
+                selectedCategory?.id == item.id ? COLORS.white : COLORS.white,
             }}
           >
             {item.name}
@@ -580,7 +582,8 @@ const Home = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#E9CCCE",
+    backgroundColor: "#9198a1",
+    backgroundColor: "#ad9d9d",
   },
   shadow: {
     shadowColor: "#000",
