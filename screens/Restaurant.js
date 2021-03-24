@@ -164,6 +164,24 @@ const Restaurant = ({ route, navigation }) => {
               </Text>
               <Text style={{ ...FONTS.body3 }}>{item.description}</Text>
             </View>
+
+            {/* Calories */}
+            <View
+              style={{
+                flexDirection: "row",
+                marginTop: 10,
+              }}
+            >
+              <TouchableOpacity
+                style={{ marginRight: 10, height: 20, width: 20 }}
+              >
+                <FontAwesome5 name="gripfire" size={24} color="black" />
+              </TouchableOpacity>
+
+              <Text style={{ color: COLORS.darkgray }}>
+                {item.calories.toFixed(2)} cal
+              </Text>
+            </View>
           </View>
         ))}
       </Animated.ScrollView>
