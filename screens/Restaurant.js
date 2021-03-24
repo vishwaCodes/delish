@@ -81,7 +81,23 @@ const Restaurant = ({ route, navigation }) => {
         snapToAlignment="center"
         showsHorizontalScrollIndicator={false}
         // onScroll
-      ></Animated.ScrollView>
+      >
+        {restaurant?.menu.map((item, index) => (
+          <View key={`menu-${index}`} style={{ alignItems: "center" }}>
+            <View style={{ height: SIZES.height * 0.35 }}>
+              {/* Food Image */}
+              <Image
+                source={item.photo}
+                resizeMode="cover"
+                style={{
+                  width: SIZES.width,
+                  height: "100%",
+                }}
+              />
+            </View>
+          </View>
+        ))}
+      </Animated.ScrollView>
     );
   }
 
