@@ -264,6 +264,24 @@ const Restaurant = ({ route, navigation }) => {
             }}
           >
             <Text>Items in Cart</Text>
+            <Text>$45</Text>
+          </View>
+
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              paddingVertical: SIZES.padding * 2,
+              paddingHorizontal: SIZES.padding * 3,
+            }}
+          >
+            <View
+              style={{
+                flexDirection: "row",
+              }}
+            >
+              <Ionicons name="ios-location-outline" size={24} color="black" />
+            </View>
           </View>
         </View>
       </View>
