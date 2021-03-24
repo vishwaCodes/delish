@@ -409,9 +409,7 @@ const Home = ({ navigation }) => {
               alignItems: "center",
               justifyContent: "center",
               backgroundColor:
-                selectedCategory?.id == item.id
-                  ? COLORS.white
-                  : COLORS.lightGray,
+                selectedCategory?.id == item.id ? COLORS.white : COLORS.white,
             }}
           >
             {item.icon}
@@ -582,7 +580,7 @@ const Home = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff0f5",
+    backgroundColor: "#E9CCCE",
   },
   shadow: {
     shadowColor: "#000",
