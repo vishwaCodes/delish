@@ -94,6 +94,42 @@ const Restaurant = ({ route, navigation }) => {
                   height: "100%",
                 }}
               />
+
+              {/* Quantity */}
+              <View
+                style={{
+                  position: "absolute",
+                  bottom: -20,
+                  width: SIZES.width,
+                  height: 50,
+                  justifyContent: "center",
+                  flexDirection: "row",
+                }}
+              >
+                <TouchableOpacity
+                  style={{
+                    width: 50,
+                    backgroundColor: COLORS.white,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderTopLeftRadius: 25,
+                    borderBottomLeftRadius: 25,
+                  }}
+                >
+                  <Text>-</Text>
+                </TouchableOpacity>
+
+                <View
+                  style={{
+                    width: 50,
+                    backgroundColor: COLORS.white,
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Text>5</Text>
+                </View>
+              </View>
             </View>
           </View>
         ))}
