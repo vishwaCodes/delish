@@ -359,13 +359,15 @@ const Home = ({ navigation }) => {
               top: 10,
               width: "70%",
               height: "100%",
-              backgroundColor: COLORS.white,
+              backgroundColor: COLORS.black,
               alignItems: "center",
               justifyContent: "center",
               borderRadius: SIZES.radius,
             }}
           >
-            <Text style={{ ...FONTS.h3 }}>{currentLocation.streetName}</Text>
+            <Text style={{ color: COLORS.white }}>
+              {currentLocation.streetName}
+            </Text>
           </View>
         </View>
 
@@ -421,7 +423,7 @@ const Home = ({ navigation }) => {
             style={{
               marginTop: SIZES.padding,
               color:
-                selectedCategory?.id == item.id ? COLORS.white : COLORS.white,
+                selectedCategory?.id == item.id ? COLORS.white : COLORS.black,
             }}
           >
             {item.name}
@@ -583,7 +585,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#9198a1",
-    backgroundColor: "#ad9d9d",
+    backgroundColor: "#6c737e",
   },
   shadow: {
     shadowColor: "#000",
