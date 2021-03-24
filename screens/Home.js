@@ -582,7 +582,7 @@ const Home = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.lightGray4,
+    backgroundColor: "#fff0f5",
   },
   shadow: {
     shadowColor: "#000",
