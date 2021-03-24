@@ -17,12 +17,11 @@ const Restaurant = ({ route, navigation }) => {
   const [restaurant, setRestaurant] = React.useState(null);
   const [currentLocation, setCurrentLocation] = React.useState(null);
 
-  // React.useEffect(() => {
-  //   let { item, currentLocation } = route.params;
+  React.useEffect(() => {
+    let { item } = route.params;
 
-  //   setRestaurant(item);
-  //   currentLocation(currentLocation);
-  // });
+    setRestaurant(item);
+  });
 
   function renderHeader() {
     return (
@@ -45,7 +44,20 @@ const Restaurant = ({ route, navigation }) => {
             alignItems: "center",
             justifyContent: "center",
           }}
-        ></View>
+        >
+          <View
+            style={{
+              height: 50,
+              alignItems: "center",
+              justifyContent: "center",
+              paddingHorizontal: SIZES.padding * 3,
+              borderRadius: SIZES.radius,
+              backgroundColor: COLORS.lightGray3,
+            }}
+          >
+            <Text>{restaurant?.name}</Text>
+          </View>
+        </View>
       </View>
     );
   }
