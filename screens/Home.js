@@ -359,7 +359,7 @@ const Home = ({ navigation }) => {
               top: 10,
               width: "70%",
               height: "100%",
-              backgroundColor: COLORS.lightGray3,
+              backgroundColor: COLORS.white,
               alignItems: "center",
               justifyContent: "center",
               borderRadius: SIZES.radius,
