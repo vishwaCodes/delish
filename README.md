@@ -8,3 +8,8 @@ A React Native food delivery app.
 - Google Maps API
 - Expo 
 - Expo Vector Icons
+
+# Instructions
+
+- Please make sure to sign into your Expo Account while viewing from a mobile device.
+- Link https://expo.io/@candytuft/projects/delish
