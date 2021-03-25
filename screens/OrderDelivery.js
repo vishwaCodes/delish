@@ -1,38 +1,29 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { View, TouchableOpacity, SafeAreaView, StyleSheet } from "react-native";
 import { COLORS, FONTS, icons, SIZES, GOOGLE_API_KEY } from "../constants";
 
 import { AntDesign } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 
 const OrderDelivery = ({ route, navigation }) => {
-  // const [restaurant, setRestaurant] = React.useState(null);
-  // const [streetName, setStreetName] = React.useState("");
-  // const [fromLocation, setFromLocation] = React.useState(null);
-  // const [toLocation, setToLocation] = React.useState(null);
-  // const [region, setRegion] = React.useState(null);
-
-  // React.useEffect(() => {
-  // let { restaurant, currentLocation } = route.params;
-
-  // let fromLoc = currentLocation.gps;
-  // let toLoc = restaurant.location;
-  // let street = currentLocation.streetName;
-
-  // let mapRegion = {
-  //   latitude: (fromLoc.latitude + toLoc.latitude) / 2,
-  //   longitude: (fromLoc.longitude + toLoc.longitude) / 2,
-  //   latitudeDelta: Math.abs(fromLoc.latitude - toLoc.latitude) * 2,
-  //   longitudeDelta: Math.abs(fromLoc.longitude - toLoc.location) * 2,
-  // };
-
-  //   setRestaurant(restaurant);
-  //   setStreetName(street);
-  //   setFromLocation(fromLoc);
-  //   setToLocation(toLoc);
-  //   setRegion(mapRegion);
-  // }, []);
+  function renderHeader() {
+    return (
+      <View style={{ flexDirection: "row" }}>
+        <TouchableOpacity
+          style={{
+            width: 50,
+            paddingLeft: SIZES.padding * 2,
+            justifyContent: "center",
+          }}
+          onPress={() => navigation.goBack()}
+        >
+          <Ionicons name="arrow-back" size={24} color="black" />
+        </TouchableOpacity>
+      </View>
+    );
+  }
 
   const destinationMarker = () => (
     <Marker>
@@ -66,5 +57,12 @@ const OrderDelivery = ({ route, navigation }) => {
     </MapView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.lightGray2,
+  },
+});
 
 export default OrderDelivery;

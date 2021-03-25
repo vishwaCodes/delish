@@ -585,7 +585,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#9198a1",
-    backgroundColor: "#6c737e",
   },
   shadow: {
     shadowColor: "#000",
