@@ -111,10 +111,10 @@ const Restaurant = ({ route, navigation }) => {
               justifyContent: "center",
               paddingHorizontal: SIZES.padding * 3,
               borderRadius: SIZES.radius,
-              backgroundColor: COLORS.lightGray3,
+              backgroundColor: COLORS.blackShade,
             }}
           >
-            <Text style={{ ...FONTS.h3 }}>{restaurant?.name}</Text>
+            <Text style={{ color: COLORS.white }}>{restaurant?.name}</Text>
           </View>
         </View>
         <TouchableOpacity
@@ -380,7 +380,7 @@ const Restaurant = ({ route, navigation }) => {
               style={{
                 width: SIZES.width * 0.9,
                 padding: SIZES.padding,
-                backgroundColor: COLORS.primary,
+                backgroundColor: COLORS.blackShade,
                 alignItems: "center",
                 borderRadius: SIZES.radius,
               }}
@@ -411,7 +411,7 @@ const Restaurant = ({ route, navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.lightGray2,
+    backgroundColor: COLORS.lightGray,
   },
 });
 

@@ -18,8 +18,8 @@ export const COLORS = {
   darkgray: "#898C95",
   pink: "#E9CCCE",
   green: "#C7E3D0",
-  pastelBlue: "#b5cfd8",
-  blackShade: "#494949",
+  pastelBlue: "#7e8a97",
+  blackShade: "#555555",
 };
 
 export const SIZES = {

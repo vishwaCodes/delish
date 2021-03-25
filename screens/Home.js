@@ -359,7 +359,7 @@ const Home = ({ navigation }) => {
               top: 10,
               width: "70%",
               height: "100%",
-              backgroundColor: COLORS.black,
+              backgroundColor: COLORS.blackShade,
               alignItems: "center",
               justifyContent: "center",
               borderRadius: SIZES.radius,
@@ -423,7 +423,7 @@ const Home = ({ navigation }) => {
             style={{
               marginTop: SIZES.padding,
               color:
-                selectedCategory?.id == item.id ? COLORS.white : COLORS.black,
+                selectedCategory?.id == item.id ? COLORS.white : COLORS.white,
             }}
           >
             {item.name}
@@ -585,6 +585,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#9198a1",
+    backgroundColor: COLORS.lightGray,
   },
   shadow: {
     shadowColor: "#000",
