@@ -34,17 +34,17 @@ const Home = ({ navigation }) => {
     },
     {
       id: 2,
-      name: "Noodles",
+      name: "Asian",
       icon: <MaterialCommunityIcons name="noodles" size={24} color="black" />,
     },
     {
       id: 3,
-      name: "Tacos",
+      name: "Mexican",
       icon: <MaterialCommunityIcons name="taco" size={24} color="black" />,
     },
     {
       id: 4,
-      name: "Burgers",
+      name: "American",
       icon: <MaterialCommunityIcons name="hamburger" size={24} color="black" />,
     },
     {

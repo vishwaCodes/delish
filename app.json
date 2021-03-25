@@ -25,7 +25,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": "",
+    "description": "A React Native food delivery app!\nPlease make sure to sign into your Expo Account while viewing from your mobile device.",
     "githubUrl": "https://github.com/vishwaCodes/delish"
   }
 }
