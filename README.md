@@ -5,7 +5,7 @@ Delish has three screens:
 1. Home Screen
 - Users can view different cuisines and restaurants with the ability to click on any restaurant which would then take them to the restaurant's page.
 2. Restaurant Screen
-- Users can view the restaurant page which consists of different pictures highlighting the menu. 
+- Users can view the restaurant page which consists of different pictures of selected restaurant's cuisine. Functionality includes adding a menu item, changing the price dynamically based on the order, changing the total items number based on the order, and navigation to take the User back to the home page.
 3. Order Delivery Screen
 - Users can view the map around their current location.
 
