@@ -12,4 +12,8 @@ A React Native food delivery app.
 # Instructions
 
 - Please make sure to sign into your Expo Account while viewing from a mobile device.
-- [Expo Link here!](https://expo.io/@candytuft/projects/delish)
+
+# Expo Link
+
+- Delish is deployed on Expo.
+- [Click to view Delsih on Expo](https://expo.io/@candytuft/projects/delish)
