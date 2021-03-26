@@ -2,6 +2,11 @@
 
 A React Native food delivery app.
 
+# Preview
+
+<img width="697" alt="Screen Shot 2021-03-25 at 7 08 35 PM" src="https://user-images.githubusercontent.com/73917422/112564877-6b5ec480-8db2-11eb-9b13-e0a9e90d7bf7.png">
+
+
 # Technologies Used
 
 - React Native
